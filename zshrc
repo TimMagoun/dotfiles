@@ -1,3 +1,4 @@
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -58,13 +59,16 @@ ZSH_THEME="maran"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  zsh-nvm git
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -98,13 +102,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias cal="/opt/google/chrome/google-chrome --profile-directory=Default --app-id=kjbdgfilnfhdoflbpgamdcdgpehopbep"
-alias gmail="/opt/google/chrome/google-chrome --profile-directory=Default --app-id=kmhopmchchfpfdcdjodmpfaaphdclmlj"
+# alias cal="/opt/google/chrome/google-chrome --profile-directory=Default --app-id=kjbdgfilnfhdoflbpgamdcdgpehopbep"
+# alias gmail="/opt/google/chrome/google-chrome --profile-directory=Default --app-id=kmhopmchchfpfdcdjodmpfaaphdclmlj"
 
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Adding MOOS-ivp to path
+path+=('/home/tim/moos-ivp/bin')
+path+=('/home/tim/moos-ivp-mr/bin')
+export PATH
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
