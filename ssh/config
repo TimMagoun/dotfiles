@@ -1,3 +1,16 @@
 Host txe1-login.mit.edu
   HostName txe1-login.mit.edu
   User magoun
+
+Host redwood_ooo
+  AddKeysToAgent yes
+  User tim
+  ForwardAgent yes
+  IdentityFile ~/.ssh/id_ed25519_work
+  HostName redwood.matician.com
+
+Host tim-desk
+  User tim
+  Hostname tim-desk
+  ProxyJump redwood_ooo
+  IdentityFile ~/.ssh/id_ed25519_work
