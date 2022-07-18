@@ -11,5 +11,6 @@
         create: true
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
-
+    ~/.yabairc: yabairc
+    ~/.skhdrc: skhdrc
 
