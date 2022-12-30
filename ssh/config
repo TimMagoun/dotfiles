@@ -14,3 +14,9 @@ Host tim-desk
   Hostname tim-desk
   ProxyJump redwood_ooo
   IdentityFile ~/.ssh/id_ed25519_work
+
+Host neet2
+  User tim
+  Hostname neet2
+  ProxyJump redwood_ooo
+  IdentityFile ~/.ssh/id_ed25519_work

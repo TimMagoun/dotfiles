@@ -147,3 +147,5 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 . "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
