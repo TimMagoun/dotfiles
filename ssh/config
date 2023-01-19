@@ -1,7 +1,3 @@
-Host 10.0.0.105
-  HostName 10.0.0.105
-  User forum
-
 Host txe1-login.mit.edu
   HostName txe1-login.mit.edu
   User magoun
