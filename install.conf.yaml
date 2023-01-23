@@ -2,9 +2,9 @@
 
 - link:
     ~/.gitconfig: gitconfig
-    ~/.ssh/config:
-        path: ssh/config
-        create: true
+    # ~/.ssh/config:
+    #    path: ssh/config
+    #    create: true
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
-    ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml: xfce_shortcuts.xml
+    # ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml: xfce_shortcuts.xml
