@@ -118,8 +118,12 @@ unset __conda_setup
 setopt extendedglob
 
 ## ROS
+#ros_source="~/catkin_ws/devel/setup.zsh"
+ros_source="/opt/ros/noetic/setup.zsh"
+if [ -f $ros_source ]; then
+	source $ros_source
+fi
 # source /opt/ros/noetic/setup.zsh
-source ~/catkin_ws/devel/setup.zsh
 
 if [ -f ~/ros_master_ip ]; then
 	ros_ip="$(cat ~/ros_master_ip)"
@@ -130,5 +134,3 @@ else
 fi
 
 export ROS_HOSTNAME=$(hostname).local
-
-
