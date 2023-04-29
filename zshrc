@@ -1,11 +1,9 @@
 # zmodload zsh/zprof
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+path+=('/home/tim/.local/bin')
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-# Path to compdump file
-export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case, to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -26,9 +24,7 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
+# zstyle ':omz:update' frequency 13 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
@@ -119,6 +115,20 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-# setopt extendedglob
+setopt extendedglob
+
+## ROS
 # source /opt/ros/noetic/setup.zsh
-# zprof
+source ~/catkin_ws/devel/setup.zsh
+
+if [ -f ~/ros_master_ip ]; then
+	ros_ip="$(cat ~/ros_master_ip)"
+	echo "Setting ROS_MASTER_URI to $ros_ip"
+	export ROS_MASTER_URI="http://$ros_ip:11311"
+else	
+	export ROS_MASTER_URI="http://$(hostname).local:11311"
+fi
+
+export ROS_HOSTNAME=$(hostname).local
+
+
