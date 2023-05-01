@@ -92,6 +92,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zconf="vim ~/.zshrc"
+alias open="xdg-open"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # disable sort when completing `git checkout`
