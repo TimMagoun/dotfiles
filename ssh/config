@@ -2,10 +2,6 @@ Host printer
   HostName 10.0.0.40
   User forum
 
-Host txe1-login.mit.edu
-  HostName txe1-login.mit.edu
-  User magoun
-
 Host mrg
   HostName mrg-magoun.csail.mit.edu
   User tim
