@@ -66,20 +66,7 @@ ZSH_THEME="maran"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-
-export FZF_PREVIEW_COMMAND='([[ -d {} ]] && tree -L 2 -C {}) || ([[ -f {} ]] && bat --style=numbers,changes --wrap=never --color=always --line-range :300 {}) || echo {}'
-export FZF_DEFAULT_OPTS="
-  --bind='?:toggle-preview'
-  --bind='ctrl-u:preview-page-up'
-  --bind='ctrl-d:preview-page-down'
-  --preview-window 'right:60%:hidden:wrap'
-  --layout=reverse
-  --preview '$FZF_PREVIEW_COMMAND'"
-
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-plugins=(git fzf-tab zsh-autosuggestions fzf)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,16 +102,7 @@ zstyle ':completion:*:git-checkout:*' sort false
 # set descriptions format to enable group support
 zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# switch group using `,` and `.`
-zstyle ':fzf-tab:*' switch-group ',' '.'
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-fi
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -141,3 +119,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+alias matlab="/Applications/MATLAB_R2022b.app/bin/matlab" 
+alias a2="cd ~/acad/2.671"
+alias a8="cd ~/acad/18.335"
+alias a6="cd ~/acad/16.32"

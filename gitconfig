@@ -10,3 +10,5 @@
 	required = true
 [core]
 	excludesfile = /Users/timmagoun/.gitignore
+[pull]
+	rebase = false
