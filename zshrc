@@ -93,6 +93,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zconf="vim ~/.zshrc"
 alias open="xdg-open"
+alias ca="conda activate"
+alias cda="conda deactivate"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # disable sort when completing `git checkout`
