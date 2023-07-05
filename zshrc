@@ -92,6 +92,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zconf="vim ~/.zshrc"
+alias zsource="source ~/.zshrc"
 alias open="xdg-open"
 alias ca="conda activate"
 alias cda="conda deactivate"
@@ -121,8 +122,9 @@ unset __conda_setup
 setopt extendedglob
 
 ## ROS
-#ros_source="~/catkin_ws/devel/setup.zsh"
-ros_source="/opt/ros/noetic/setup.zsh"
+#ros_source="/home/tim/mocap_ws/devel/setup.zsh"
+ros_source="/home/tim/open_sem_ws/devel/setup.zsh"
+#ros_source="/opt/ros/noetic/setup.zsh"
 if [ -f $ros_source ]; then
 	source $ros_source
 fi
