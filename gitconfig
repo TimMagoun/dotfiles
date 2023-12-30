@@ -9,5 +9,5 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-	excludesfile = /Users/timmagoun/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim

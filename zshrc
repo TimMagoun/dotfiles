@@ -19,7 +19,7 @@ ZSH_THEME="maran"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
@@ -94,9 +94,6 @@ source $ZSH/oh-my-zsh.sh
 alias zconf="vim ~/.zshrc"
 alias zsource="source ~/.zshrc"
 alias open="xdg-open"
-alias ca="conda activate"
-alias cda="conda deactivate"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
@@ -104,38 +101,3 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/tim/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/tim/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/tim/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/tim/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-setopt extendedglob
-
-## ROS
-#ros_source="/home/tim/mocap_ws/devel/setup.zsh"
-ros_source="/home/tim/open_sem_ws/devel/setup.zsh"
-#ros_source="/opt/ros/noetic/setup.zsh"
-if [ -f $ros_source ]; then
-	source $ros_source
-fi
-# source /opt/ros/noetic/setup.zsh
-
-if [ -f ~/ros_master_ip ]; then
-	ros_ip="$(cat ~/ros_master_ip)"
-	echo "Setting ROS_MASTER_URI to $ros_ip"
-	export ROS_MASTER_URI="http://$ros_ip:11311"
-else	
-	export ROS_MASTER_URI="http://$(hostname).local:11311"
-fi
-
-export ROS_HOSTNAME=$(hostname).local
