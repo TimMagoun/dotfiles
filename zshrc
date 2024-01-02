@@ -93,10 +93,18 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zconf="vim ~/.zshrc"
 alias zsource="source ~/.zshrc"
+alias down="cd ~/Downloads"
 alias open="xdg-open"
-alias ca="conda activate"
-alias cda="conda deactivate"
+alias ma="mamba activate"
+alias mda="mamba deactivate"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+mcd() {
+  if [ -n "$1" ]; then
+    mkdir -p "$1" && cd "$1"
+  else
+    echo "Usage: mcd <directory>"
+  fi
+}
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
@@ -107,35 +115,57 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/tim/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/tim/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/tim/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/tim/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/tim/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/tim/mambaforge/etc/profile.d/conda.sh"
     else
-        export PATH="/home/tim/miniconda3/bin:$PATH"
+        export PATH="/home/tim/mambaforge/bin:$PATH"
     fi
 fi
 unset __conda_setup
+
+if [ -f "/home/tim/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/home/tim/mambaforge/etc/profile.d/mamba.sh"
+fi
+
 # <<< conda initialize <<<
 setopt extendedglob
 
 ## ROS
+#ros_source="/home/tim/orbslam3_ws/devel/setup.zsh"
+#ros_source="/home/tim/catkin_ws/devel/setup.zsh"
 #ros_source="/home/tim/mocap_ws/devel/setup.zsh"
-ros_source="/home/tim/open_sem_ws/devel/setup.zsh"
 #ros_source="/opt/ros/noetic/setup.zsh"
+ros_source="/home/tim/projects/osoda_ws/devel/setup.zsh"
 if [ -f $ros_source ]; then
 	source $ros_source
-fi
-# source /opt/ros/noetic/setup.zsh
-
-if [ -f ~/ros_master_ip ]; then
-	ros_ip="$(cat ~/ros_master_ip)"
-	echo "Setting ROS_MASTER_URI to $ros_ip"
-	export ROS_MASTER_URI="http://$ros_ip:11311"
-else	
-	export ROS_MASTER_URI="http://$(hostname).local:11311"
+else
+	echo "Cannot source ($ros_source)"
 fi
 
-export ROS_HOSTNAME=$(hostname).local
+alias ross="source /home/tim/projects/osoda_ws/devel/setup.zsh"
+alias rosc="source /opt/ros/noetic/setup.zsh"
+alias rosk="source /home/tim/ros_tools_ws/devel"
+alias tf='cd /var/tmp && rosrun tf view_frames && evince frames.pdf &'
+alias cbo="catkin build osoda"
+alias playtum="rosbag play rgbd_dataset_*.bag /camera/rgb/image_color:=/camera/color/image_raw /camera/rgb/camera_info:=/camera/color/camera_info /camera/depth/image:=/camera/aligned_depth_to_color/image_raw"
+#ross
+#rosc
+#rosk
+#export ROS_IP="127.0.0.1"
+# export ROS_IP=128.30.10.33 
+export ROS_IP="128.30.24.37"
+# export ROS_IP="192.168.1.174"
+
+export ROS_MASTER_URI="http://${ROS_IP}:11311"
+
+# pnpm
+export PNPM_HOME="/home/tim/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
