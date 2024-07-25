@@ -1,7 +1,7 @@
 # zmodload zsh/zprof
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-path+=('/home/tim/.local/bin')
+path+=('/User/timmagoun/.local/bin')
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
@@ -19,9 +19,9 @@ ZSH_THEME="maran"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13 # Uncomment the following line if pasting URLs and other text is messed up.
@@ -103,7 +103,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 setopt extendedglob
 
-alias matlab="/Applications/MATLAB_R2022b.app/bin/matlab" 
 alias kssh="kitty +kitten ssh"
 alias bc="bc -l -q"
 # Hist
