@@ -1,3 +1,7 @@
+- defaults:
+    link:
+      relink: true
+
 - clean: ['~']
 
 - link:
@@ -6,5 +10,15 @@
        path: ssh/config
        create: true
     ~/.tmux.conf: tmux.conf
+    ~/.vim: vim
+    ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+    ~/.gitignore: gitignore
     ~/.config/kitty/kitty.conf: kitty.conf
+
+- create:
+    - ~/downloads
+    - ~/.vim/undo-history
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
