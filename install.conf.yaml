@@ -2,12 +2,9 @@
 
 - link:
     ~/.gitconfig: gitconfig
-    # ~/.ssh/config:
-    #    path: ssh/config
-    #    create: true
+    ~/.ssh/config:
+       path: ssh/config
+       create: true
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
-    #~/.config/alacritty/alacritty.yml: alacritty.yml
-    # ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml: xfce_shortcuts.xml
     ~/.config/kitty/kitty.conf: kitty.conf
-    ~/.config/kitty/onehalf-dark.conf: onehalf/kitty/onehalf-dark.conf

@@ -1,7 +1,3 @@
-Host printer 
-  HostName 10.0.0.40
+Host printer
+  HostName printer.lan
   User forum
-
-Host mrg
-  HostName mrg-magoun.csail.mit.edu
-  User tim

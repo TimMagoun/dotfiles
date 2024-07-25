@@ -63,7 +63,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,6 +91,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zconf="vim ~/.zshrc"
+alias zsource="source ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # disable sort when completing `git checkout`
@@ -100,23 +101,29 @@ zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/tim/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/tim/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/tim/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/tim/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 setopt extendedglob
 
 alias matlab="/Applications/MATLAB_R2022b.app/bin/matlab" 
-alias a2="cd ~/acad/2.671"
-alias a8="cd ~/acad/18.335"
-alias a6="cd ~/acad/16.32"
+alias kssh="kitty +kitten ssh"
+alias bc="bc -l -q"
+# Hist
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+alias incog=' unset HISTFILE'
+
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE='/Users/timmagoun/.local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/Users/timmagoun/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+alias mamba=micromamba
+alias ma="mamba activate"
+alias mda="mamba deactivate"
