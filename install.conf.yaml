@@ -6,6 +6,7 @@
       create: true
     create:
       mode: 0755
+
 - create: 
   - ~/bin
   - ~/source
@@ -18,3 +19,4 @@
     ~/.zshrc:
     ~/.fzf.zsh:
     ~/.oh-my-zsh:
+    ~/.p10k.zsh:
