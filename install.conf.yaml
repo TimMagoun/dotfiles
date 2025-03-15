@@ -1,10 +1,20 @@
+---
+- defaults:
+    link:
+      relink: true
+      force: true
+      create: true
+    create:
+      mode: 0755
+- create: 
+  - ~/bin
+  - ~/source
+
 - clean: ['~']
 
 - link:
-    ~/.gitconfig: gitconfig
-    # ~/.ssh/config:
-    #    path: ssh/config
-    #    create: true
-    ~/.tmux.conf: tmux.conf
-    ~/.zshrc: zshrc
-    ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml: xfce_shortcuts.xml
+    ~/.gitconfig:
+    ~/.tmux.conf:
+    ~/.zshrc:
+    ~/.fzf.zsh:
+    ~/.oh-my-zsh:
