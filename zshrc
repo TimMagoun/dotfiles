@@ -1,3 +1,9 @@
+if [[ -n ${VSCODE_SHELL_INTEGRATION} ]] && [[ ${PAGER} == "cat" ]] ; then
+    PS1='%~ $ '
+    [ -f ~/.profile ] && source ~/.profile
+    return
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -117,22 +123,24 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
 alias incog=' unset HISTFILE'
 
-
-# >>> mamba initialize >>>
-# !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE='/Users/timmagoun/.local/bin/micromamba';
-export MAMBA_ROOT_PREFIX='/Users/timmagoun/micromamba';
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__mamba_setup"
-else
-    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-fi
-unset __mamba_setup
-# <<< mamba initialize <<<
-alias mamba=micromamba
-alias ma="mamba activate"
-alias mda="mamba deactivate"
-
 # To customize prompt, run `p10k configure` or edit ~/.dotfile/p10k.zsh.
+
 [[ ! -f ~/.dotfile/p10k.zsh ]] || source ~/.dotfile/p10k.zsh
+. "$HOME/.local/bin/env"
+
+eval "$(uv generate-shell-completion zsh)"
+
+alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
+
+
+# bun completions
+[ -s "/Users/timmagoun/.bun/_bun" ] && source "/Users/timmagoun/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/timmagoun/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

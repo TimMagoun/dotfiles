@@ -1,3 +1,15 @@
-Host printer
-  HostName printer.lan
+Host 10.0.0.95
+  HostName 10.0.0.95
+  User tim
+
+Host forum
+  HostName forum.local
   User forum
+
+Host hp
+  HostName tim-hp.local
+  User tim
+
+Host agent
+  HostName 10.0.0.50
+  User agent
