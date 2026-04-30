@@ -1,0 +1,23 @@
+tap "felixkratz/formulae"
+
+brew "bat"
+brew "cloc"
+brew "delta"
+brew "fd"
+brew "eza"
+brew "fzf"
+brew "gh"
+brew "git-lfs"
+brew "htop"
+brew "mpv"
+brew "neovim"
+brew "pre-commit"
+brew "ripgrep"
+brew "tmux"
+brew "wget"
+
+brew "felixkratz/formulae/borders"
+
+cask "aerospace"
+cask "hiddenbar"
+cask "swipeaerospace"
