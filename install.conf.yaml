@@ -5,16 +5,35 @@
 - clean: ['~']
 
 - link:
+    ~/.aerospace.toml: aerospace.toml
     ~/.gitconfig: gitconfig
-    ~/.ssh/config:
-       path: ssh/config
-       create: true
+    ~/.profile: profile
+    ~/.zprofile: zprofile
+    ~/.zshenv: zshenv
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.gitignore: gitignore
+    ~/.config/alacritty/alacritty.toml:
+       path: alacritty/alacritty.toml
+       create: true
+    ~/.config/gh/config.yml:
+       path: gh/config.yml
+       create: true
+    ~/.config/git/ignore:
+       path: git/ignore
+       create: true
+    ~/.config/htop/htoprc:
+       path: htop/htoprc
+       create: true
     ~/.config/kitty/kitty.conf: kitty.conf
+    ~/.config/mpv/input.conf:
+       path: mpv/input.conf
+       create: true
+    ~/.config/mpv/mpv.conf:
+       path: mpv/mpv.conf
+       create: true
     ~/.p10k.zsh: p10k.zsh
 
 - create:

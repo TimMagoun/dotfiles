@@ -14,7 +14,7 @@ fi
 # zmodload zsh/zprof
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-path+=('/User/timmagoun/.local/bin')
+path+=("$HOME/.local/bin")
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
@@ -134,13 +134,13 @@ alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 
 
 # bun completions
-[ -s "/Users/timmagoun/.bun/_bun" ] && source "/Users/timmagoun/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/timmagoun/.docker/completions $fpath)
+fpath=("$HOME/.docker/completions" $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions

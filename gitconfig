@@ -1,7 +1,7 @@
 [use]
-	email = timmagoun@gmail.com
+	email = 10456980+TimMagoun@users.noreply.github.com
 [user]
-	email = timmagoun@gmail.com
+	email = 10456980+TimMagoun@users.noreply.github.com
 	name = Tim Magoun
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -9,5 +9,5 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-	excludesfile = /Users/timmagoun/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim
