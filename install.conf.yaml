@@ -2,7 +2,7 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.aerospace.toml: aerospace.toml
@@ -11,34 +11,32 @@
     ~/.zprofile: zprofile
     ~/.zshenv: zshenv
     ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.gitignore: gitignore
     ~/.config/alacritty/alacritty.toml:
-       path: alacritty/alacritty.toml
-       create: true
+      path: alacritty/alacritty.toml
+      create: true
     ~/.config/gh/config.yml:
-       path: gh/config.yml
-       create: true
-    ~/.config/git/ignore:
-       path: git/ignore
-       create: true
-    ~/.config/htop/htoprc:
-       path: htop/htoprc
-       create: true
-    ~/.config/kitty/kitty.conf: kitty.conf
+      path: gh/config.yml
+      create: true
+    ~/.config/Code/User/settings.json:
+      path: vscode/settings.json
+      create: true
+    ~/.config/Code/User/keybindings.json:
+      path: vscode/keybindings.json
+      create: true
     ~/.config/mpv/input.conf:
-       path: mpv/input.conf
-       create: true
+      path: mpv/input.conf
+      create: true
     ~/.config/mpv/mpv.conf:
-       path: mpv/mpv.conf
-       create: true
+      path: mpv/mpv.conf
+      create: true
     ~/.p10k.zsh: p10k.zsh
-
-- create:
-    - ~/downloads
-    - ~/.vim/undo-history
+    ~/.config/karabiner/karabiner.json:
+      path: karabiner.json
+      create: true
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
+    - [brew bundle]

@@ -27,8 +27,8 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # Disable accidental cmd-h
 automatically-unhide-macos-hidden-apps = true
 
-# Keep 5 workspaces alive
-persistent-workspaces = ["1", "2", "3", "4", "5"]
+# Keep 6 workspaces alive (S is first, then numbered)
+persistent-workspaces = ["S", "1", "2", "3", "4", "5"]
 
 # Keyboard layout (QWERTY by default)
 [key-mapping]
@@ -55,6 +55,9 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     alt-j = 'focus down --boundaries all-monitors-outer-frame'
     alt-k = 'focus up --boundaries all-monitors-outer-frame'
 
+    # Next monitor with wraparound
+    alt-n = 'focus-monitor --wrap-around next'
+
     # Window movement (alt+shift+hjkl)
     alt-shift-h = 'move left --boundaries all-monitors-outer-frame'
     alt-shift-j = 'move down --boundaries all-monitors-outer-frame'
@@ -68,8 +71,8 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     # Toggle float (alt+shift+f)
     alt-shift-f = 'layout floating tiling'
 
-    # Toggle fullscreen (alt+shift+m)
-    alt-shift-m = 'fullscreen'
+    # Toggle fullscreen (alt+m)
+    alt-m = 'fullscreen'
 
     # Join with node (alt+shift+y,u,i,o)
     alt-shift-y = 'join-with left'
@@ -77,7 +80,8 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     alt-shift-i = 'join-with up'
     alt-shift-o = 'join-with right'
 
-    # Workspace switching (alt+1..5)
+    # Workspace switching (alt+backtick then alt+1..5)
+    alt-backtick = 'workspace S'
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     alt-3 = 'workspace 3'
@@ -90,6 +94,7 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     alt-period = 'workspace next'
 
     # Move node to workspace and follow focus
+    alt-shift-backtick = 'move-node-to-workspace --focus-follows-window S'
     alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
     alt-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
     alt-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
@@ -108,40 +113,40 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
 
     # Launch applications
     # Terminal (Alacritty) with alt+t
-    alt-t = 'exec-and-forget open -n -a Alacritty'
-    alt-shift-t = 'exec-and-forget open -a Alacritty'
-    # Browser (Safari) with alt+w
-    alt-w = 'exec-and-forget open -n -a Safari'
-    alt-shift-w = 'exec-and-forget open -a Safari'
+    alt-t = 'exec-and-forget open -a Alacritty'
+    alt-shift-t = 'exec-and-forget open -n -a Alacritty'
+
+    # Browser (Brave) with alt+w
+    alt-w = 'exec-and-forget open -a "Brave Browser"'
+    alt-shift-w = 'exec-and-forget open -n -a "Brave Browser"'
+
+    # Calendar
+    alt-c = 'exec-and-forget open -a Calendar'
 
 # App-to-workspace assignments
-# Workspace 1: Mail, Slack
+# Workspace S: Calendar
 [[on-window-detected]]
-    if.app-id = 'com.apple.mail'
-    run = 'move-node-to-workspace 1'
-
-[[on-window-detected]]
-    if.app-id = 'com.tinyspeck.slackmacgap'
-    run = 'move-node-to-workspace 1'
+    if.app-id = 'com.apple.iCal'
+    run = 'move-node-to-workspace S'
 
 # Workspace 2: Obsidian
 [[on-window-detected]]
     if.app-id = 'md.obsidian'
-    run = 'move-node-to-workspace 2'
+    run = 'move-node-to-workspace 1'
 
 # Workspace 3: Reminders
 [[on-window-detected]]
     if.app-id = 'com.apple.reminders'
-    run = 'move-node-to-workspace 3'
+    run = 'move-node-to-workspace 1'
 
-# Workspace 4: VS Code
+# Workspace 4: Windsurf
 [[on-window-detected]]
-    if.app-id = 'com.microsoft.VSCode'
-    run = 'move-node-to-workspace 4'
+    if.app-id = 'com.windsurf.Windsurf'
+    run = 'move-node-to-workspace 2'
 
-# Workspace 5: Safari
+# Workspace 5: Brave
 [[on-window-detected]]
-    if.app-id = 'com.apple.Safari'
+    if.app-id = 'com.brave.Browser'
     run = 'move-node-to-workspace 5'
 
 [workspace-to-monitor-force-assignment]
