@@ -25,7 +25,6 @@ brew "zellij"
 
 cask "aerospace"
 cask "alacritty"
-cask "dockdoor"
 cask "font-hack-nerd-font"
 cask "karabiner-elements"
 cask "raycast"
