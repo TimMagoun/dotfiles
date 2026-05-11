@@ -1,0 +1,178 @@
+{
+  "[python]": {
+    "editor.wordBasedSuggestions": "matchingDocuments",
+    "editor.rulers": [88],
+    "editor.wordWrapColumn": 88,
+    "editor.formatOnType": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "isort.args": ["--profile", "black"],
+  "[rust]": {
+    "editor.inlayHints.fontSize": 12,
+    "editor.inlayHints.padding": true
+  },
+  "[toml]": {},
+  "debug.allowBreakpointsEverywhere": true,
+  "editor.fontFamily": "'Hack Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 12,
+  "editor.inlineSuggest.enabled": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.wordWrapColumn": 100,
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "files.insertFinalNewline": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.statusLimit": 10000,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": false,
+    "scminput": false,
+    "yaml": true,
+    "rust": false,
+    "cpp": true,
+    "python": true,
+    "julia": false
+  },
+  "grunt.autoDetect": "on",
+  "gulp.autoDetect": "on",
+  "jake.autoDetect": "on",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "remote.downloadExtensionsLocally": true,
+  "search.followSymlinks": true,
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.inheritEnv": false,
+  "window.confirmBeforeClose": "keyboardOnly",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "git.closeDiffOnOperation": true,
+  "githubPullRequests.fileListLayout": "flat",
+  "githubIssues.queries": [
+    {
+      "label": "My Issues",
+      "query": "default"
+    },
+    {
+      "label": "Created Issues",
+      "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+    },
+    {
+      "label": "Recent Issues",
+      "query": "state:open repo:${owner}/${repository} sort:updated-desc"
+    }
+  ],
+  "[cpp]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.semanticHighlighting.enabled": true,
+    "diffEditor.codeLens": false,
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "settingsSync.ignoredExtensions": ["platformio.platformio-ide"],
+  "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+  "C_Cpp.inlayHints.parameterNames.enabled": true,
+  "C_Cpp.loggingLevel": "Debug",
+  "githubPullRequests.remotes": ["origin"],
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#dd0531"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#61dafb"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Svelte Orange",
+      "value": "#ff3d00"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    },
+    {
+      "name": "Charcoal",
+      "value": "#264653"
+    },
+    {
+      "name": "Persian Green",
+      "value": "#2a9d8f"
+    },
+    {
+      "name": "Maize Crayola",
+      "value": "#e9c46a"
+    },
+    {
+      "name": "Sandy Brown",
+      "value": "#f4a261"
+    },
+    {
+      "name": "Burnt Sienna",
+      "value": "#e76f51"
+    }
+  ],
+  "git.autoStash": true,
+  "git.branchProtection": ["master"],
+  "git.detectSubmodulesLimit": 20,
+  "git.fetchOnPull": true,
+  "githubPullRequests.pullBranch": "never",
+  "diffEditor.renderSideBySide": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.indexing": true,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "notebook.lineNumbers": "on",
+  "git.mergeEditor": true,
+  "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
+  "python.analysis.autoFormatStrings": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.multiCursorModifier": "ctrlCmd",
+  "git.openRepositoryInParentFolders": "never",
+  "git.suggestSmartCommit": false,
+  "workbench.editor.empty.hint": "hidden",
+  "update.showReleaseNotes": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "telemetry.feedback.enabled": false,
+  "github.copilot.chat.codesearch.enabled": true,
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "chat.tools.terminal.autoApprove": {
+    "platformio": true
+  },
+  "terminal.integrated.shellIntegration.enabled": false,
+  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.startupEditor": "none",
+  "telemetry.telemetryLevel": "off",
+  "workbench.activityBar.location": "top"
+}

@@ -6,6 +6,12 @@
     ~/.aerospace.toml: home/aerospace.toml
     ~/.gitconfig.local: home/gitconfig
     ~/.zshrc.local: home/zshrc.local
+    ~/Library/Application Support/Code/User/settings.json:
+      path: home/vscode/settings.json
+      create: true
+    ~/Library/Application Support/Code/User/keybindings.json:
+      path: home/vscode/keybindings.json
+      create: true
     ~/.config/mpv/input.conf:
       path: home/mpv/input.conf
       create: true

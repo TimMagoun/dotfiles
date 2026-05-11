@@ -6,3 +6,9 @@
     ~/.aerospace.toml: work/aerospace.toml
     ~/.gitconfig.local: work/gitconfig
     ~/.zshrc.local: work/zshrc.local
+    ~/Library/Application Support/Code/User/settings.json:
+      path: work/vscode/settings.json
+      create: true
+    ~/Library/Application Support/Code/User/keybindings.json:
+      path: work/vscode/keybindings.json
+      create: true

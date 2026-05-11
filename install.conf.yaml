@@ -20,12 +20,6 @@
     ~/.config/gh/config.yml:
       path: gh/config.yml
       create: true
-    ~/.config/Code/User/settings.json:
-      path: vscode/settings.json
-      create: true
-    ~/.config/Code/User/keybindings.json:
-      path: vscode/keybindings.json
-      create: true
     ~/.p10k.zsh: p10k.zsh
     ~/.config/karabiner/karabiner.json:
       path: karabiner.json
