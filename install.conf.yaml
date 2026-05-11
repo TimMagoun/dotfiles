@@ -21,8 +21,8 @@
       path: gh/config.yml
       create: true
     ~/.p10k.zsh: p10k.zsh
-    ~/.config/karabiner/karabiner.json:
-      path: karabiner.json
+    ~/.config/karabiner:
+      path: karabiner
       create: true
 
 - shell:
