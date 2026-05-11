@@ -18,6 +18,9 @@
     ~/.config/mpv/mpv.conf:
       path: home/mpv/mpv.conf
       create: true
+    ~/.config/karabiner:
+      path: home/karabiner
+      create: true
 
 - shell:
     - [brew bundle --file home/Brewfile, Installing home Brew packages]

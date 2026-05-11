@@ -12,3 +12,6 @@
     ~/Library/Application Support/Code/User/keybindings.json:
       path: work/vscode/keybindings.json
       create: true
+    ~/.config/karabiner:
+      path: work/karabiner
+      create: true
