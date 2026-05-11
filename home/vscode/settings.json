@@ -155,7 +155,7 @@
   "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
   "python.analysis.autoFormatStrings": true,
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.multiCursorModifier": "ctrlCmd",
   "git.openRepositoryInParentFolders": "never",
@@ -174,5 +174,8 @@
   "workbench.colorTheme": "Visual Studio Dark",
   "workbench.startupEditor": "none",
   "telemetry.telemetryLevel": "off",
-  "workbench.activityBar.location": "top"
+  "workbench.activityBar.location": "top",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
