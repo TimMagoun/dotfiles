@@ -1,11 +1,11 @@
-[user]
-	email = 10456980+TimMagoun@users.noreply.github.com
-	name = Tim Magoun
+[include]
+	# Profile-specific identity is linked to ~/.gitconfig.local by install.
+	path = ~/.gitconfig.local
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 [core]
-	excludesfile = /Users/timmagoun/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim

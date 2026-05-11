@@ -1,0 +1,8 @@
+# AeroSpace Configuration
+# Work profile uses placeholder border colors until the work machine values are finalized.
+config-version = 2
+
+# Start AeroSpace at login
+start-at-login = true
+
+# Replace with work config

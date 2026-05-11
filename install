@@ -1,15 +1,42 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
+readonly SHARED_CONFIG="install.conf.yaml"
+readonly DOTBOT_DIR="dotbot"
+readonly DOTBOT_BIN="bin/dotbot"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+usage() {
+  echo "Usage: $0 {home|work} [dotbot-args...]" >&2
+}
 
-cd "${BASEDIR}"
+if [[ $# -lt 1 ]]; then
+  usage
+  exit 1
+fi
+
+PROFILE="$1"
+shift
+
+case "${PROFILE}" in
+  home|work)
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac
+
+run_dotbot() {
+  local config_file="$1"
+  shift
+  "${SCRIPT_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${SCRIPT_DIR}" -c "${config_file}" "$@"
+}
+
+cd "${SCRIPT_DIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+run_dotbot "${SHARED_CONFIG}" "$@"
+run_dotbot "${PROFILE}/install.conf.yaml" "$@"

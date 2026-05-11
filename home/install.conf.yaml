@@ -1,0 +1,17 @@
+- defaults:
+    link:
+      relink: true
+
+- link:
+    ~/.aerospace.toml: home/aerospace.toml
+    ~/.gitconfig.local: home/gitconfig
+    ~/.zshrc.local: home/zshrc.local
+    ~/.config/mpv/input.conf:
+      path: home/mpv/input.conf
+      create: true
+    ~/.config/mpv/mpv.conf:
+      path: home/mpv/mpv.conf
+      create: true
+
+- shell:
+    - [brew bundle --file home/Brewfile, Installing home Brew packages]

@@ -1,0 +1,8 @@
+- defaults:
+    link:
+      relink: true
+
+- link:
+    ~/.aerospace.toml: work/aerospace.toml
+    ~/.gitconfig.local: work/gitconfig
+    ~/.zshrc.local: work/zshrc.local

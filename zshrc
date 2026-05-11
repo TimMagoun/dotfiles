@@ -32,11 +32,6 @@ alias ls="eza -G"
 alias ll="eza -lh"
 alias l="eza -lah"
 
-# Hist
-setopt HIST_IGNORE_SPACE
-setopt HIST_SAVE_NO_DUPS
-alias incog=' unset HISTFILE'
-
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # disable sort when completing `git checkout`
@@ -51,3 +46,6 @@ setopt extendedglob
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f "$HOME/.p10k.zsh" ]] || source "$HOME/.p10k.zsh"
 . "$HOME/.local/bin/env"
+
+# Profile-specific shell additions live outside the shared zshrc.
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"

@@ -1,3 +1,4 @@
+# Shared dotfiles installed for both home and work profiles.
 - defaults:
     link:
       relink: true
@@ -5,7 +6,6 @@
 - clean: ["~"]
 
 - link:
-    ~/.aerospace.toml: aerospace.toml
     ~/.gitconfig: gitconfig
     ~/.profile: profile
     ~/.zprofile: zprofile
@@ -25,12 +25,6 @@
       create: true
     ~/.config/Code/User/keybindings.json:
       path: vscode/keybindings.json
-      create: true
-    ~/.config/mpv/input.conf:
-      path: mpv/input.conf
-      create: true
-    ~/.config/mpv/mpv.conf:
-      path: mpv/mpv.conf
       create: true
     ~/.p10k.zsh: p10k.zsh
     ~/.config/karabiner/karabiner.json:
