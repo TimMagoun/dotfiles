@@ -20,6 +20,9 @@
     ~/.config/gh/config.yml:
       path: gh/config.yml
       create: true
+    ~/.config/zellij/config.kdl:
+      path: zellij/config.kdl
+      create: true
     ~/.p10k.zsh: p10k.zsh
 
 - shell:
