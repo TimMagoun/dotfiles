@@ -1,3 +1,6 @@
+export ZELLIJ_AUTO_EXIT="true"
+eval "$(zellij setup --generate-auto-start zsh)"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -32,7 +35,22 @@ alias ls="eza -G"
 alias ll="eza -lh"
 alias l="eza -lah"
 
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+### Zellij aliases
+zr()  { zellij run --name "$*" -- zsh -ic "$*"; }
+zrf() { zellij run --name "$*" --floating -- zsh -ic "$*"; }
+zri() { zellij run --name "$*" --in-place -- zsh -ic "$*"; }
+
+alias ze='zellij edit'
+alias zef='zellij edit --floating'
+alias zei='zellij edit --in-place'
+
+zpipe() {
+  if [[ -z "$1" ]]; then
+    zellij pipe
+  else
+    zellij pipe -p "$1"
+  fi
+}
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
