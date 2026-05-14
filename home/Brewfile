@@ -1,3 +1,5 @@
 brew "docker"
 brew "mpv"
 brew "tailscale"
+
+cask "omnidisksweeper"
