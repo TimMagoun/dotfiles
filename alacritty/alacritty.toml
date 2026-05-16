@@ -22,3 +22,10 @@ style = "Bold Italic"
 
 [window]
 padding = { x = 5, y = 5 }
+# Make alt+key shortcuts work
+option_as_alt = "Both"
+
+[[keyboard.bindings]]
+key = "F"
+mods = "Command|Control"
+action = "None"
