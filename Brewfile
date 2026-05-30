@@ -16,7 +16,6 @@ brew "ripgrep"
 brew "rust"
 brew "tlrc"
 brew "tmux"
-brew "uv"
 brew "wget"
 brew "zellij"
 

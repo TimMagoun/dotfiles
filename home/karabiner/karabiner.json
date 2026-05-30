@@ -115,6 +115,16 @@
           },
           "ignore": false,
           "mouse_flip_vertical_wheel": true
+        },
+        {
+          "identifiers": {
+            "is_keyboard": true,
+            "is_pointing_device": true,
+            "product_id": 531,
+            "vendor_id": 13364
+          },
+          "ignore": false,
+          "ignore_vendor_events": true
         }
       ],
       "name": "Default profile",

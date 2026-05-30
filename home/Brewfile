@@ -1,4 +1,5 @@
 brew "docker"
+brew "uv"
 brew "mpv"
 brew "tailscale"
 
